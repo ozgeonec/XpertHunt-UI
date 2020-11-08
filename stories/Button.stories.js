@@ -3,15 +3,17 @@ import React from 'react';
 import Button from '../components/button/button'
 
 export default {
-  title: 'Button',
-  component: Button
-};
+    title: 'Example/Button',
+    component: Button,
+    decorators: [withKnobs]
+}
 
 const Template = (args) => <Button {...args} />;
 
-export const Primary = () =>
-  (<div>
-    <Button>Huu</Button>
-  </div>);
+export const ButtonExample = () => (
+    <Button>
+        hi
 
+    </Button>
+)
 

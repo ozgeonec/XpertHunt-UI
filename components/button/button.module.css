@@ -6,4 +6,7 @@
     border-radius: 99px;
     display: flex;
     align-items: center;
+    &:hover{
+        color: var(--c-theme);
+    }
 }
