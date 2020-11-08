@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run build-storybook && next build",
     "start": "next start",
     "storybook": "start-storybook -p 6006 --no-dll",
-    "build-storybook": "build-storybook --no-dll"
+    "build-storybook": "build-storybook --no-dll",
+    "icon": "svgr icons -d components/icons --replace-attr-values \\\\\\\"#fff=currentColor\\\\\\\" --icon"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "next": "^10.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
@@ -20,7 +22,10 @@
     "@storybook/addon-essentials": "^6.0.28",
     "@storybook/addon-links": "^6.0.28",
     "@storybook/react": "^6.0.28",
+    "@svgr/cli": "^5.4.0",
     "babel-loader": "^8.1.0",
-    "react-is": "^17.0.1"
+    "css-loader": "^5.0.1",
+    "react-is": "^17.0.1",
+    "style-loader": "^2.0.0"
   }
 }

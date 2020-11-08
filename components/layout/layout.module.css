@@ -1,0 +1,9 @@
+.layout{
+    margin:0;
+    width:100%;
+    background: linear-gradient(103.69deg, #D691FF 73.7%, rgba(107, 73, 134, 0) 105.72%, rgba(107, 73, 134, 0.989583) 115.8%);
+    height: 100vh;
+}
+.logo{
+    position:fixed;
+}
