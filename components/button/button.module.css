@@ -1,12 +1,14 @@
 .button{
-    padding: 2px;
+    padding: 8px;
     cursor:pointer;
-    background-color: var(--c-primary);
-    color: var(--c-theme);
-    border-radius: 99px;
+    background-color: var(--c-theme);
+    color: var(--c-primary);
+    border-radius: 4px;
     display: flex;
     align-items: center;
+    border: 1px;
+    border-color: var(--c-theme);
     &:hover{
-        color: var(--c-theme);
+       background-color: violet;
     }
 }

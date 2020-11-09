@@ -6,9 +6,9 @@ import Button from "../button/button";
 function Navbar() {
     return (<div className={styles.navbar}>
             <XpertHunt className={styles.logo}/>
-            <Button>Sign In</Button>
-    </div>
+            <Button className={styles.button}>Sign In</Button>
 
+    </div>
     )
 }
 
