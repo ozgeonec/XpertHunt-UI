@@ -1,0 +1,45 @@
+.page{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:100%;
+    background: linear-gradient(103.69deg, #D691FF 73.7%, rgba(107, 73, 134, 0) 105.72%, rgba(107, 73, 134, 0.989583) 115.8%);
+    height: 100vh;
+}
+
+.vector{
+    position: absolute;
+    font-size: 700px;
+    top: 10px;
+    right:0;
+    bottom: 0;
+}
+.search{
+    display: inherit;
+    position: relative;
+    left: 20px;
+    top:260px;
+}
+.text{
+    position: absolute;
+    width: 618px;
+    height: 225px;
+    left: 20px;
+    top: 205px;
+    font-weight: bold;
+    font-size: 48px;
+    color: var(--c-primary);
+}
+.textSmall{
+    position: absolute;
+    left: 20px;
+    top:360px;
+    color: var(--c-primary);
+    font-size: 24px;
+}
+.info{
+    background-color: var(--c-primary);
+    width:100%;
+
+
+}

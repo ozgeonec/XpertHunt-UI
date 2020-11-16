@@ -2,12 +2,15 @@ import React from 'react'
 import styles from './layout.module.css'
 import Navbar from "../navbar/navbar";
 import Search from "../searchbar/search";
+import MainDiv from "../main-page/main-page";
 
 
-function Layout({children}) {
+
+
+function Layout() {
     return <div className={styles.layout}>
         <Navbar/>
-        <Search/>
+        <MainDiv/>
     </div>
 
 }
