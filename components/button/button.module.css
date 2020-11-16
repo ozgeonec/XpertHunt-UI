@@ -1,5 +1,5 @@
 .button{
-    padding: 8px;
+    padding: 8px 20px 8px 20px;
     cursor:pointer;
     background-color: var(--c-theme);
     color: var(--c-primary);
@@ -8,6 +8,7 @@
     align-items: center;
     border: 1px;
     border-color: var(--c-theme);
+
     &:hover{
        background-color: violet;
     }

@@ -8,16 +8,16 @@ import cn from 'classnames'
 
 
 function MainDiv() {
-    return <div className={styles.page}>
+    return (<div className={styles.page}>
         <Firstpagedesign  className={styles.vector}/>
-        <Text className={cn(styles.text)}>Find the best digital talent for your project</Text>
-        <Text className={styles.textSmall}>XpertHunt guides you to find experts easily and quickly.</Text>
+        <Text className={cn(styles.text)}>Find the best digital<br /> talent for your<br />project</Text>
+        <Text className={styles.textSmall}>XpertHunt guides you to find <br />experts easily and quickly.</Text>
         <Search className={cn(styles.search)}/>
         <div className={styles.info}>
             <p>Info</p>
         </div>
+    </div>)
 
-    </div>
 
 }
 
