@@ -4,6 +4,8 @@ import {Firstpagedesign} from "../icons";
 import Search from "../searchbar/search";
 import Text from "../text-main/text";
 import cn from 'classnames'
+import InfoDiv from "../info-page/info";
+import Footer from "../footer/footer";
 
 
 
@@ -13,9 +15,8 @@ function MainDiv() {
         <Text className={cn(styles.text)}>Find the best digital<br /> talent for your<br />project</Text>
         <Text className={styles.textSmall}>XpertHunt guides you to find <br />experts easily and quickly.</Text>
         <Search className={cn(styles.search)}/>
-        <div className={styles.info}>
-            <p>Info</p>
-        </div>
+        <InfoDiv/>
+        <Footer className={styles.footer}/>
     </div>)
 
 

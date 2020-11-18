@@ -1,0 +1,23 @@
+.info{
+    position: absolute;
+    background-color: var(--c-primary);
+    width:100%;
+    top:652px;
+    height: 80vh;
+    padding-top: 20px;
+}
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color:var(--c-theme);
+}
+
+.ad{
+    position: absolute;
+    width: 100%;
+    top:100px;
+    height: 660px;
+    left: 0;
+    background: var(--c-div-color);
+}

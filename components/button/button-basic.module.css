@@ -1,0 +1,16 @@
+.button{
+    padding: 6px 20px 6px 20px;
+    cursor:pointer;
+    background-color: transparent;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    color: var(--c-theme);
+    font-weight: bold;
+    border-color: var(--c-theme);
+    border-width: 2px;
+    border-style: solid;
+    &:hover{
+        background-color: transparent;
+    }
+}

@@ -5,6 +5,7 @@
     width:100%;
     background: linear-gradient(103.69deg, #D691FF 73.7%, rgba(107, 73, 134, 0) 105.72%, rgba(107, 73, 134, 0.989583) 115.8%);
     height: 652px;
+
 }
 
 .vector{
@@ -17,8 +18,8 @@
 .search{
     display: inherit;
     position: relative;
-    left: 20px;
     top:180px;
+    margin-left: 20px;
 }
 .text{
     position: absolute;
@@ -44,5 +45,11 @@
     background-color: var(--c-primary);
     width:100%;
     top:652px;
-
+}
+.footer{
+    position: absolute;
+    top:1500px;
+    height: 10vh;
+    width:100%;
+    background-color: var(--c-theme);
 }

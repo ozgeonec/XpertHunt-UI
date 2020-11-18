@@ -1,8 +1,8 @@
 .navbar{
-    position: fixed;
+    position: absolute;
     top: 0;
     min-height: 60px;
-    padding: 0px 2px;
+    padding: 0 2px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -17,5 +17,10 @@
 }
 .button{
     position: absolute;
-    right: 80px;
+    right: 140px;
+}
+
+.buttonJoin{
+    position: absolute;
+    right: 50px;
 }
