@@ -2,10 +2,9 @@ import React from "react";
 import MainLayout from "../components/layout/main-layout";
 
 
-function HomePage() {
+function DesignPage() {
     return (<MainLayout>
     </MainLayout>)
-
 }
 
-export default HomePage
+export default DesignPage

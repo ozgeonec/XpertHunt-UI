@@ -3,13 +3,15 @@ import styles from "./info.module.css"
 
 import Header from "../header/header";
 import Text from "../text-main/text";
-
+import ButtonBasic from "../button/button-basic";
+import {useRouter} from "next/router";
 
 function InfoDiv() {
+    const router = useRouter()
     return (<div className={styles.info}>
         <div className={styles.button}>
-            <Header>Graphics&Design</Header>
-            <Header>Programming&Tech</Header>
+            <ButtonBasic className={styles.route} onClick={()=>router.push('/design')}>Graphics&Design</ButtonBasic>
+            <ButtonBasic className={styles.route} onClick={()=>router.push('/tech')}>Programming&Tech</ButtonBasic>
         </div>
         <div className={styles.ad}>
         <Header>A whole world of freelance talent at your fingertips</Header>
@@ -19,9 +21,8 @@ function InfoDiv() {
         <Text dark><br/>Find the right freelancer to begin working on <br/>your project within minutes.</Text>
         <Text bold dark><br/>Protected Payments</Text>
         <Text dark><br/>Always know what you'll pay upfront. Your<br/> payment isn't released until you approve the work.</Text>
-
         </div>
-        </div>)
+    </div>)
 }
 
 export default InfoDiv

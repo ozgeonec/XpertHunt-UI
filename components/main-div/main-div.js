@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './main-page.module.css'
+import styles from './main-div.module.css'
 import {Firstpagedesign} from "../icons";
 import Search from "../searchbar/search";
 import Text from "../text-main/text";

@@ -21,3 +21,7 @@
     left: 0;
     background: var(--c-div-color);
 }
+.route{
+    font-size: 30px;
+    border-width: 0;
+}

@@ -14,3 +14,9 @@
         background-color: transparent;
     }
 }
+.buttonDark{
+    outline: transparent;
+    border: transparent;
+    color: var(--c-dark-text-color);
+    font-weight: normal;
+}
