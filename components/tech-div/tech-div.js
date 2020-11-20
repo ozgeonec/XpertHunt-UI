@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './tech-div.module.css'
 import Text from "../text-main/text";
 import cn from 'classnames'
+import {TECH} from '../../constants'
 
 import Footer from "../footer/footer";
 import Header from "../header/header";
@@ -14,18 +15,15 @@ function TechDiv({className,...props}) {
             <Text dark className={styles.text}>A single place, millions of creative talents</Text>
         </div>
         <div className={styles.grids}>
-            <figure className={styles.figure}>
-                <Techframe className={styles.vector}/>
-                <figcaption><Text dark className={styles.text}>Web Development</Text></figcaption>
-            </figure>
-
-            <Techframe className={styles.vector}/>
-            <Techframe className={styles.vector}/>
-            <Techframe className={styles.vector}/>
-            <Techframe className={styles.vector}/>
-            <Techframe className={styles.vector}/>
+            {TECH.map((tech)=>{
+                return(
+                    <figure className={styles.figure}>
+                        <Techframe className={styles.vector}/>
+                        <figcaption><Text dark className={styles.text}>{tech.value}</Text></figcaption>
+                    </figure>
+                )
+            })}
         </div>
-
         <Footer className={styles.footer}/>
     </div>)
 

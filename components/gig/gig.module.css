@@ -1,0 +1,14 @@
+.div{
+    width: 255px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    border-width: 1px;
+    border-color: var(--c-dark-text-color);
+    border-style: solid;
+}
+.vector{
+ width: 100%;
+    padding-bottom: 2px;
+
+}
