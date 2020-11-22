@@ -5,8 +5,8 @@ import cn from 'classnames'
 
 
 
-function Text({children, dark, bold=false, ...props }) {
-    return <p className={cn(styles.text, bold && styles.textBold, dark && styles.dark)}{...props}>
+function Text({children,className, dark, bold, ...props }) {
+    return <p className={cn(styles.text, bold && styles.textBold, dark && styles.dark, className)}{...props}>
         {children}
     </p>
 

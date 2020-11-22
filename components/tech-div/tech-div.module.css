@@ -27,7 +27,8 @@
 .grids{
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content: space-evenly;
+    grid-auto-rows: 1fr;
+    margin: 0 20%
 }
 .figure {
     margin:2px;

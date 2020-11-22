@@ -5,7 +5,9 @@
 }
 .textBold{
     font-weight: bold;
+
 }
 .dark{
     color: var(--c-dark-text-color);
+
 }
