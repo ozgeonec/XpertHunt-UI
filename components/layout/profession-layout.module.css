@@ -1,0 +1,30 @@
+.layout{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+}
+.header{
+    position: absolute;
+    top:150px;
+    left:20px;
+}
+.gig{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-auto-rows: 1fr;
+    margin: 0 10%;
+    gap: calc(2vmin + 2px);
+    position: absolute;
+    top:500px;
+    left: 20px;
+}
+.vector{
+    position: absolute;
+    font-size: 400px;
+    top: 30px;
+    right:20px;
+}
+.text{
+    font-size: 17px;
+}
