@@ -8,8 +8,8 @@
     "dev": "next dev",
     "build": "npm run build-storybook && next build",
     "start": "next start",
-    "storybook": "start-storybook -p 6006 --no-dll",
-    "build-storybook": "build-storybook --no-dll",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -o public/ui",
     "icon": "svgr icons -d components/icons --replace-attr-values \\\\\\\"#fff=currentColor\\\\\\\" --icon"
   },
   "keywords": [],
