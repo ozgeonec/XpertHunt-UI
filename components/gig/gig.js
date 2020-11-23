@@ -13,10 +13,10 @@ function Gig({name="ozgeonec",job="developer",desc="I can develop your website",
         <Avatar/>
         <div className={styles.name}>
             <Text bold dark className={styles.text}>{name}</Text>
-            <Text dark className={styles.text}>{job}</Text>
+            <Text pale className={styles.text}>{job}</Text>
         </div>
         </div>
-        <Text dark className={styles.text}>{desc}</Text>
+        <Text pale className={styles.text}>{desc}</Text>
         <div className={styles.rating}>
             <Rating/>
         </div>
@@ -28,7 +28,7 @@ function Gig({name="ozgeonec",job="developer",desc="I can develop your website",
             <Like2/>
         </div>
         <div className={styles.price}>
-            <Text dark className={styles.text}>STARTING AT </Text>
+            <Text pale className={styles.text}>STARTING AT </Text>
             <Header className={styles.header}>${price}</Header>
         </div>
         </div>

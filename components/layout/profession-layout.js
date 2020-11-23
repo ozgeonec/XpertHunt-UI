@@ -5,19 +5,16 @@ import Gig from "../gig/gig";
 import {Firstpagedesign} from "../icons";
 import Header from "../header/header";
 import Text from "../text-main/text";
-import ReactDropdown from "react-dropdown";
-import 'react-dropdown/style.css';
+// import ReactDropdown from "react-dropdown";
+// import 'react-dropdown/style.css';
 
 function ProfessLayout({...props}) {
-    const options = [
-        'one', 'two', 'three'
-    ];
     return (<div className={styles.layout}{...props}>
         <NavbarBasic/>
         <div className={styles.header}>
             <Header>Web Development</Header>
-            <Text dark className={styles.text}>Add features to your website with custom web applications and extensions</Text>
-            <ReactDropdown options={options}  placeholder="Select an option" />
+            <Text pale className={styles.text}>Add features to your website with custom web applications and extensions</Text>
+
         </div>
         <Firstpagedesign className={styles.vector}/>
         <div className={styles.gig}>
