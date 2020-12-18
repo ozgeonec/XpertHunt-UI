@@ -15,6 +15,7 @@
   "keywords": [],
   "author": "ozgeonec",
   "dependencies": {
+    "axios": "^0.21.0",
     "classnames": "^2.2.6",
     "next": "^10.0.1",
     "postcss-preset-env": "^6.7.0",

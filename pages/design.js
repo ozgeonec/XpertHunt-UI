@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useEffect} from "react";
 import MainLayout from "../components/layout/main-layout";
+import fetchHome from '../services/api'
 
 
 function DesignPage() {
-    return (<MainLayout>
-    </MainLayout>)
+
+
+   return <MainLayout/>
 }
 
 export default DesignPage
