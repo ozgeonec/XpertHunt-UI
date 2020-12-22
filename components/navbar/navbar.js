@@ -9,13 +9,16 @@ import {useRouter} from "next/router";
 
 function Navbar() {
     const router = useRouter()
-    const handleClick = () => {
-       router.push('/login').then()
+    const handleLogin = () =>{
+        router.push('/login');
+    }
+    const handleJoin = () => {
+       router.push('/signup');
     }
     return (<div className={styles.navbar}>
             <XpertHunt className={styles.logo} />
-            <Button className={styles.button}>LOGIN</Button>
-            <ButtonBasic onClick={handleClick} className={styles.buttonJoin}>JOIN</ButtonBasic>
+            <Button onClick={handleLogin}  className={styles.button}>LOGIN</Button>
+            <ButtonBasic onClick={handleJoin} className={styles.buttonJoin}>JOIN</ButtonBasic>
     </div>)
 }
 

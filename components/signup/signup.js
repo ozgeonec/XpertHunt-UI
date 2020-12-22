@@ -1,19 +1,20 @@
 import React, {useState} from "react";
-import styles from "./login.module.css"
+import styles from "./signup.module.css"
 import cn from 'classnames'
 import axios from 'axios'
 
 
-function Login({className,email,username,password, ...props}) {
+function Signup({className,email,username,password, ...props}) {
     const [user, setUser] = useState({
         "email":"",
+        "username":"",
         "password":""
     })
 
     const handleClick =  (e) => {
         e.preventDefault();
         let token = 'xxyyzz';
-        axios.post('http://localhost:9000/login', JSON.stringify(user), {
+        axios.post('http://localhost:9000/signup', JSON.stringify(user), {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
@@ -32,12 +33,15 @@ function Login({className,email,username,password, ...props}) {
                 setUser({...user, email: e.target.value}); console.log("target:" + e.target.value)
                 console.log("email"+ email)
             }} placeholder="Enter your E-mail"/>
+            <label htmlFor="username">Username:</label>
+            <input type="text" id="username" name="user[username]" value={user.username} onChange={e => {
+                setUser({...user, username: e.target.value})}} placeholder="Enter your username"/>
             <label htmlFor="password">Password:</label>
             <input type="text" id="password" name="password" value={user.password} onChange={e => {
                 setUser({...user, password: e.target.value})}} placeholder="Enter your password"/>
-            <input onClick={handleClick} type="submit" value="Login"/>
+            <input onClick={handleClick} type="submit" value="Sign Up"/>
         </form>
     </div>)
 }
 
-export default Login
+export default Signup
