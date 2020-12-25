@@ -6,7 +6,6 @@ import ButtonBasic from "../button/button-basic";
 import {useRouter} from "next/router";
 
 
-
 function Navbar() {
     const router = useRouter()
     const handleLogin = () =>{

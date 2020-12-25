@@ -1,0 +1,13 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.main{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: 20px;
+}
