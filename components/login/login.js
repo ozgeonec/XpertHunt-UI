@@ -32,6 +32,7 @@ function Login({className,email,username,password, ...props}) {
                 setUser({...user, email: e.target.value}); console.log("target:" + e.target.value)
                 console.log("email"+ email)
             }} placeholder="Enter your E-mail"/>
+
             <label htmlFor="password">Password:</label>
             <input type="text" id="password" name="password" value={user.password} onChange={e => {
                 setUser({...user, password: e.target.value})}} placeholder="Enter your password"/>
