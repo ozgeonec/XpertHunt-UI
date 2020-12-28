@@ -10,23 +10,29 @@ function Login({className,username,password, ...props}) {
         "password":""
     })
 
-    const handleClick =  (e) => {
+    const handleClick = (e) => {
         e.preventDefault();
-        let token = 'xxyyzz';
-        axios.post('http://localhost:9000/login', JSON.stringify(user), {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
-        }).then(() => {
-            setUser(user);console.log(user);
+        axios
+            .post("http://localhost:9000/login", JSON.stringify(user), {
+                withCredentials: true,
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Content-Type": "application/json",
+                },
+            })
+            .then(function (response) {
+                setUser(user);
+                console.log(user);
+                console.log("Response: " + JSON.stringify(response.data));
 
-            window.location = "/personal-profile"
-
-        }).catch(function (error) {
-            console.log(error);
-        })
-
+                if("{\"greeting\":\"login is success\"}" === JSON.stringify(response.data) ) {
+                    window.location = "/personal-profile"
+                }
+                window.location = "/personal-profile"
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
     return (<div className={cn(styles.login, className)}{...props}>
         <form>

@@ -17,7 +17,7 @@ function NavbarBasic({className,username,...props}) {
            <ButtonBasic dark>Adverts</ButtonBasic>
            <ButtonBasic dark>Orders</ButtonBasic>
            <Avatar/>
-           <Text>{username}</Text>
+           <Text dark>{username}</Text>
        </div>
     </div>)
 }

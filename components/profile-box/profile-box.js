@@ -7,7 +7,7 @@ import Button from "../button/button";
 
 
 
-function ProfileBox({name,job,...props}) {
+function ProfileBox({name,job,button,...props}) {
     return (<div className={styles.profile}{...props}>
      <Avatar/>
      <div className={styles.name}>
@@ -15,7 +15,7 @@ function ProfileBox({name,job,...props}) {
          <Text pale >{job}</Text>
      </div>
      <hr/>
-     <Button>Contact Me</Button>
+     <Button>{button}</Button>
     </div>)
 }
 

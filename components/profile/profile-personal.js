@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./profile-personal.module.css"
 import NavbarBasic from "../navbar/navbar-basic";
 import ProfileBox from "../profile-box/profile-box";
@@ -8,22 +8,34 @@ import axios from "axios";
 
 
 function ProfilePersonal({...props}) {
-    axios.get('http://localhost:9000/:username', {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then((res) => {
-        //username=res.data
+    const [curUser, setCurUser] = useState({});
 
-    }).catch(function (error) {
-        console.log(error);
-    })
+    useEffect(() => {
+        axios
+            .get("http://localhost:9000/checkauth", {
+                withCredentials: true,
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                //credentials: "same-origin"
+            })
+            .then((res) => {
+                console.log("Response: "+JSON.stringify(res.data.user.username));
+                let newUser = {userName: JSON.stringify(res.data.user.username)};
+                setCurUser(newUser);
+                console.log(curUser);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }, []);
+
 
     const router = useRouter();
     return (<div className={styles.profile}{...props}>
-        <NavbarBasic username={}/>
+        <NavbarBasic username={curUser.userName}/>
         <div className={styles.main}>
-            <ProfileBox/>
+            <ProfileBox button={"Update Profile"}/>
             <Button onClick={() => router.push('/orders')}>Publish Order</Button>
             <Button onClick={() => router.push('/adverts')}>Publish Advert</Button>
         </div>
