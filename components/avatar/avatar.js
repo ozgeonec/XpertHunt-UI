@@ -7,7 +7,7 @@ function Avatar({ src, alt, size = 37, ...props }) {
         <div className={cn([styles.photo])} style={{ width: size, height: size }}{...props}>
             <img
                 className={styles.img}
-                src="https://pbs.twimg.com/profile_images/1317573845944029184/e_bgjyJO_400x400.jpg"
+                src="https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"
                 alt={alt}
             />
         </div>

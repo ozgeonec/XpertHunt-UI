@@ -4,7 +4,7 @@ import cn from 'classnames'
 import axios from 'axios'
 
 
-function Signup({className,email,username,password, ...props}) {
+function Signup({email,username,password,className, ...props}) {
     const [user, setUser] = useState({
         "email":"",
         "username":"",
@@ -13,18 +13,20 @@ function Signup({className,email,username,password, ...props}) {
 
     const handleClick =  (e) => {
         e.preventDefault();
-        let token = 'xxyyzz';
         axios.post('http://localhost:9000/signup', JSON.stringify(user), {
+            withCredentials: true,
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                "Access-Control-Allow-Origin": "*",
+                'Content-Type': 'application/json'
             }
-        }).then(() => {
-            setUser(user);console.log(user);
+        }).then((res) => {
+            setUser(user);
+            console.log(user);
+            console.log(res)
+            window.location = "/personal-profile"
         }).catch(function (error) {
             console.log(error);
         })
-
     }
     return (<div className={cn(styles.login, className)}{...props}>
         <form>

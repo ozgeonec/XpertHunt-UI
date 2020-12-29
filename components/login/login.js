@@ -12,15 +12,13 @@ function Login({className,username,password, ...props}) {
 
     const handleClick = (e) => {
         e.preventDefault();
-        axios
-            .post("http://localhost:9000/login", JSON.stringify(user), {
+        axios.post("http://localhost:9000/login", JSON.stringify(user), {
                 withCredentials: true,
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                     "Content-Type": "application/json",
                 },
-            })
-            .then(function (response) {
+            }).then(function (response) {
                 setUser(user);
                 console.log(user);
                 console.log("Response: " + JSON.stringify(response.data));
@@ -29,8 +27,7 @@ function Login({className,username,password, ...props}) {
                     window.location = "/personal-profile"
                 }
                 window.location = "/personal-profile"
-            })
-            .catch(function (error) {
+            }).catch(function (error) {
                 console.log(error);
             });
     }
