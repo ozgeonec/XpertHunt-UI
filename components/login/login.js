@@ -31,17 +31,15 @@ function Login({className,username,password, ...props}) {
                 console.log(error);
             });
     }
-    return (<div className={cn(styles.login, className)}{...props}>
-        <form>
-            <label htmlFor="username">Username:</label>
-            <input type="text" id="username" name="user[username]" value={user.username} onChange={e => {
+    return (<form className={cn(styles.login, className)}{...props}>
+            <label className={styles.label} htmlFor="username">Username:</label>
+            <input className={styles.input} type="text" id="username" name="user[username]" value={user.username} onChange={e => {
                 setUser({...user, username: e.target.value})}} placeholder="Enter your username"/>
-            <label htmlFor="password">Password:</label>
-            <input type="text" id="password" name="password" value={user.password} onChange={e => {
+            <label className={styles.label} htmlFor="password">Password:</label>
+            <input className={styles.input} type="text" id="password" name="password" value={user.password} onChange={e => {
                 setUser({...user, password: e.target.value})}} placeholder="Enter your password"/>
-            <input onClick={handleClick} type="submit" value="Login"/>
-        </form>
-    </div>)
+            <input onClick={handleClick} type="submit" value="Login" className={styles.button}/>
+        </form>)
 }
 
 export default Login
