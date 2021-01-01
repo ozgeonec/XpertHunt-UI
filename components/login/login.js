@@ -29,7 +29,8 @@ function Login({className,username,password, ...props}) {
                 window.location = "/personal-profile"
             }).catch(function (error) {
                 console.log(error);
-            });
+            }
+        );
     }
     return (<form className={cn(styles.login, className)}{...props}>
             <label className={styles.label} htmlFor="username">Username:</label>

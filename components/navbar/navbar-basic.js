@@ -15,7 +15,7 @@ function NavbarBasic({className,username,...props}) {
         <Search dark className={styles.search}/>
        <div className={styles.right}>
            <ButtonBasic dark>Adverts</ButtonBasic>
-           <ButtonBasic dark>Orders</ButtonBasic>
+           <ButtonBasic dark onClick={()=>router.push('/myOrders')}>Orders</ButtonBasic>
            <Avatar/>
            <Text dark>{username}</Text>
        </div>

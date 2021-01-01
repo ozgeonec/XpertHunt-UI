@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import styles from "./profile-personal.module.css"
 import NavbarBasic from "../navbar/navbar-basic";
 import ProfileBox from "../profile-box/profile-box";
+import StoreContext from "../store/store"
 import Button from "../button/button";
 import {useRouter} from "next/router";
 import axios from "axios";
@@ -47,7 +48,8 @@ function ProfilePersonal({...props}) {
     }
 
     const router = useRouter();
-    return (<div className={styles.profile}{...props}>
+    return (<StoreContext.Provider value={curUser}>
+        <div className={styles.profile}{...props}>
         <NavbarBasic username={curUser.userName}/>
         <div className={styles.main}>
             <ProfileBox button={"Update Profile"}/>
@@ -57,9 +59,9 @@ function ProfilePersonal({...props}) {
             }}>Logout</Button>
             <Button onClick={() => router.push('/orders')}>Publish Order</Button>
             <Button onClick={() => router.push('/adverts')}>Publish Advert</Button>
-
         </div>
-    </div>)
+    </div>
+    </StoreContext.Provider>)
 }
 
 export default ProfilePersonal
