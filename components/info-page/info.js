@@ -11,7 +11,7 @@ function InfoDiv() {
     return (<div className={styles.info}>
         <div className={styles.button}>
             <ButtonBasic className={styles.route} onClick={()=>router.push('/design')}>Graphics&Design</ButtonBasic>
-            <ButtonBasic className={styles.route} onClick={()=>router.push('/tech')}>Programming&Tech</ButtonBasic>
+            <ButtonBasic className={styles.route} onClick={()=>router.push('/allOrders')}>Jobs</ButtonBasic>
         </div>
         <div className={styles.ad}>
         <Header>A whole world of freelance talent at your fingertips</Header>

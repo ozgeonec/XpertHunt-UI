@@ -3,13 +3,12 @@ import styles from "./order.module.css"
 import cn from 'classnames'
 import Header from "../header/header";
 import Text from "../text-main/text";
-import StoreContext from "../store/store"
 import axios from "axios";
 
 
 
 function Order({className, ...props}) {
-    const store = useContext(StoreContext)
+
 
     const [order, setOrder] = useState({
         "description":"",

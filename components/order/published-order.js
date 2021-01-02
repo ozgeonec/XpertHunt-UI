@@ -31,14 +31,13 @@ function PublishedOrder({children, ...props}){
 
     },[])
 
-
     return <div className={styles.div} {...props}>
-       <Text dark>{orders.buyer.username}</Text>
-       <Text dark>{orders.description}</Text>
-       <Text dark>{orders.budget}</Text>
-       <Button>Delete</Button>
-       <Button>Apply</Button>
-    </div>
+            <Text dark>{orders.buyer.username}</Text>
+            <Text dark>{orders.description}</Text>
+            <Text dark>{orders.budget}</Text>
+            <Button>Delete</Button>
+            <Button>Apply</Button>
+        </div>
 }
 
 export default PublishedOrder
