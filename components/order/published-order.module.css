@@ -1,0 +1,10 @@
+.div{
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    border-width: 1px;
+    border-color: var(--c-dark-fade-color);
+    border-style: solid;
+    position: relative;
+}

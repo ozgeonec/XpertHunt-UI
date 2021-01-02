@@ -20,16 +20,17 @@ function ProfilePersonal({...props}) {
                     "Content-Type": "application/json"
                 },
                 //credentials: "same-origin"
-            })
-            .then((res) => {
+        })
+        .then((res) => {
                 //console.log("Response: "+JSON.stringify(res.data.user.username));
-                let newUser = {userName: JSON.stringify(res.data.user.username)};
+                let newUser = {userName: JSON.stringify(res.data.user.username)}
                 setCurUser(newUser);
                 console.log(curUser);
-            })
-            .catch(function (error) {
+        })
+        .catch(function (error) {
                 console.log(error);
-            });
+        });
+
 
     }, []);
     const handleClick = (e) =>{
@@ -40,7 +41,6 @@ function ProfilePersonal({...props}) {
                 "Content-Type": "application/json"
             },
         }).then(() => {
-
             console.log("logged out")
         }).catch(function (error) {
             console.log(error);

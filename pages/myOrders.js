@@ -1,10 +1,10 @@
 import React from "react";
-import Order from "../components/order/order";
+import PublishedOrder from "../components/order/published-order";
 
 
 
 function MyOrder() {
-    return <Order/>
+    return <PublishedOrder/>
 }
 
 export default MyOrder
