@@ -1,37 +1,49 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './gig.module.css'
 import Avatar from "../avatar/avatar";
 import Text from "../text-main/text";
-import {Bookmark2, Like2, Star7} from "../icons";
 import Header from "../header/header";
-import Rating from "../rating/rating";
+import axios from "axios";
 
-function Gig({name="ozgeonec",job="developer",desc="I can develop your website",score=4.8,rated=200,price="18.80",src="https://yazilimsirketleri.org/wp-content/uploads/2018/09/Web-development-designing-Anvar-Freelancer-1.png"}){
-    return <div className={styles.div}>
-        <img className={styles.vector} src={src} alt="photo"/>
-        <div className={styles.profile}>
-        <Avatar/>
-        <div className={styles.name}>
-            <Text bold dark className={styles.text}>{name}</Text>
-            <Text pale className={styles.text}>{job}</Text>
-        </div>
-        </div>
-        <Text pale className={styles.text}>{desc}</Text>
-        <div className={styles.rating}>
-            <Rating/>
-        </div>
+//category
+function Gig({className,...props}){
+    const [ad,setAd] = useState({
+            "title":"",
+            "about":"",
+            "price":0
+    })
 
-        <hr className={styles.hr}/>
-        <div className={styles.bottom}>
-        <div className={styles.emoji}>
-            <Bookmark2/>
-            <Like2/>
-        </div>
-        <div className={styles.price}>
-            <Text pale className={styles.text}>STARTING AT </Text>
-            <Header className={styles.header}>${price}</Header>
-        </div>
-        </div>
+    const handleClick = (e) => {
+        e.preventDefault();
+        axios.post("http://localhost:9000/create-ad", JSON.stringify(ad), {
+            withCredentials: true,
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json",
+            },
+        }).then(function (res){
+            setAd(ad)
+            console.log(ad)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+
+    return <div className={styles.div}{...props}>
+        <form>
+            <Header>Create Your Ad:</Header>
+            <Text>Your Title:</Text>
+            <input type="text"  id="title" name="ad[title]" value={ad.description} onChange={e => {
+                setAd({...ad, title: e.target.value})}}/>
+            <Text>Describe Your Talents:</Text>
+            <input type="text" id="about" name="ad[about]" value={ad.about} onChange={e => {
+                setAd({...ad, about:event.target.value})}} placeholder="I can..."/>
+            <Text>Describe Your Talents:</Text>
+            <input type="number" id="price" name="ad[price]" value={ad.price} onChange={e => {
+                setAd({...ad, price:Number(event.target.value)})}} placeholder="$"/>
+            <input type="submit" onClick={handleClick} value="Publish"/>
+        </form>
+
 
     </div>
 }

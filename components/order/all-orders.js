@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import styles from './published-order.module.css'
+import styles from './all-orders.module.css'
 import Text from "../text-main/text";
 import Button from "../button/button";
 import axios from "axios";
@@ -46,24 +46,20 @@ function AllOrders({children, ...props}){
             /*setOrders(orders => ({
                 ...orders, orders:newOrder
             }))*/
-            //console.log(JSON.stringify(newOrder))
             console.log(orders)
-
-            //console.log(Object.entries(orders))
         })
             .catch(function (error) {
                 console.log(error);
             });
     },[])
-    return <div className={styles.div} {...props}>
-        {orders.map((orders)=>{return (<div>
-                                            <Text dark key={orders.description}>{orders.description}</Text>
-                                            <Text dark key={orders.budget}>{orders.budget}</Text>
-                                            <Text dark key={orders.buyer.username}>{orders.buyer.username}</Text>
-                                            <Button>Delete</Button>
-                                             <Button>Apply</Button>
+    return <div>
+        {orders.map((orders)=>{
+            return (<div  className={styles.div} {...props}>
+                <Text dark key={orders.description}>{orders.description}</Text>
+                <Text dark key={orders.budget}>{orders.budget}</Text>
+                <Text dark key={orders.buyer.username}>{orders.buyer.username}</Text>
+                <Button>Apply</Button>
         </div>)})}
-
     </div>
 }
 
