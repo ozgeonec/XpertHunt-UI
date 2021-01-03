@@ -14,7 +14,7 @@ function NavbarBasic({className,username,...props}) {
         <XpertHuntBlack className={styles.logo} onClick={() => router.push('/')} />
         <Search dark className={styles.search}/>
        <div className={styles.right}>
-           <ButtonBasic dark>Adverts</ButtonBasic>
+           <ButtonBasic dark onClick={()=>router.push('/myAds')}>Adverts</ButtonBasic>
            <ButtonBasic dark onClick={()=>router.push('/myOrders')}>Orders</ButtonBasic>
            <Avatar/>
            <Text dark>{username}</Text>
