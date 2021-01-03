@@ -3,8 +3,8 @@ import AllOrders from "../components/order/all-orders";
 
 
 
-function MyOrder() {
+function AllOrdersPage() {
     return <AllOrders/>
 }
 
-export default MyOrder
+export default AllOrdersPage
