@@ -23,14 +23,14 @@ function AllGigs({className,...props}){
                 "Content-Type": "application/json"
             },
         }).then((res)=>{
+            console.log(res.data)
             let newAds = res.data
-            //console.log(res.data)
-            setAds([newAds])
+
+            setAds(newAds)
             console.log(ads)
-        })
-            .catch(function (error) {
+        }).catch(function (error) {
                 console.log(error);
-            });
+        });
 
     },[])
 

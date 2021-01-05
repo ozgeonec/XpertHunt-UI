@@ -34,7 +34,7 @@ function PublishedGigs({className,...props}){
 
     },[])
 
-    return <div className={styles.div}{...props}>
+    return( <div className={styles.div}{...props}>
         <Avatar/>
             {ads.map((ads)=>{
                 return( <div>
@@ -54,7 +54,7 @@ function PublishedGigs({className,...props}){
             })}
 
 
-    </div>
+    </div>)
 }
 
 export default PublishedGigs
