@@ -33,10 +33,10 @@ function Order({className, ...props}) {
     return <div className={cn(styles.order, className)}{...props}>
         <form>
             <Header>What Service Are You Looking For?</Header>
-            <Text>Describe the service you're looking to purchase - please be as detailed as possible:</Text>
+            <Text dark>Describe the service you're looking to purchase - please be as detailed as possible:</Text>
             <input type="text"  id="description" name="order[description]" value={order.description} onChange={e => {
                 setOrder({...order, description: e.target.value})}} placeholder="I'm looking for..."/>
-            <Text>What is your budget for this service?</Text>
+            <Text dark>What is your budget for this service?</Text>
             <input type="number" id="budget" name="order[budget]" value={order.budget} onChange={e => {
                 setOrder({...order, budget:Number(event.target.value)})}} placeholder="$"/>
             <input type="submit" onClick={handleClick} value="Publish"/>

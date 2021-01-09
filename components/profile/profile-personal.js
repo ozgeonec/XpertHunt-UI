@@ -5,6 +5,7 @@ import ProfileBox from "../profile-box/profile-box";
 import Button from "../button/button";
 import {useRouter} from "next/router";
 import axios from "axios";
+import Text from "../text-main/text";
 
 
 function ProfilePersonal({...props}) {
@@ -20,7 +21,7 @@ function ProfilePersonal({...props}) {
         })
         .then((res) => {
                 //console.log("Response: "+JSON.stringify(res.data.user.username));
-                let newUser = {userName: JSON.stringify(res.data.user.username)}
+                let newUser = {userName: res.data.user.username}
                 setCurUser(newUser);
                 console.log(curUser);
         })
@@ -46,11 +47,15 @@ function ProfilePersonal({...props}) {
         <div className={styles.profile}{...props}>
         <NavbarBasic username={curUser.userName}/>
         <div className={styles.main}>
-            <ProfileBox button={"Update Profile"}/>
-            <Button onClick={(e) => {
-                router.push('/');
-                handleClick(e);
-            }}>Logout</Button>
+            <div className={styles.name}>
+                <ProfileBox button={"Update Profile"}/>
+                <Text dark>{curUser.userName}</Text>
+                <Button onClick={(e) => {
+                    router.push('/');
+                    handleClick(e);
+                }}>Logout</Button>
+            </div>
+
             <Button onClick={() => router.push('/orders')}>Publish Order</Button>
             <Button onClick={() => router.push('/adverts')}>Publish Advert</Button>
         </div>
