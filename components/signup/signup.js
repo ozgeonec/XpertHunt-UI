@@ -28,19 +28,25 @@ function Signup({email,username,password,className, ...props}) {
             console.log(error);
         })
     }
-    return (<div className={cn(styles.login, className)}{...props}>
-        <form>
-            <label htmlFor="email">E-mail:</label>
-            <input type="email" id="email" name="user[email]" value={user.email} onChange={e => {
+    return (<div className={cn( className)}{...props}>
+        <form className={styles.login}>
+            <div className={styles.div}>
+            <label  className={styles.label} htmlFor="email">Email:</label>
+            <input  className={styles.input} type="email" id="email" name="user[email]" value={user.email} onChange={e => {
                 setUser({...user, email: e.target.value});
             }} placeholder="Enter your E-mail"/>
-            <label htmlFor="username">Username:</label>
-            <input type="text" id="username" name="user[username]" value={user.username} onChange={e => {
+            </div>
+            <div className={styles.div}>
+            <label className={styles.label}  htmlFor="username">Username:</label>
+            <input  className={styles.input} type="text" id="username" name="user[username]" value={user.username} onChange={e => {
                 setUser({...user, username: e.target.value})}} placeholder="Enter your username"/>
-            <label htmlFor="password">Password:</label>
-            <input type="password" id="password" name="password" value={user.password} onChange={e => {
+            </div>
+            <div className={styles.div}>
+            <label  className={styles.label}  htmlFor="password">Password:</label>
+            <input  className={styles.input} type="password" id="password" name="password" value={user.password} onChange={e => {
                 setUser({...user, password: e.target.value})}} placeholder="Enter your password"/>
-            <input onClick={handleClick} type="submit" value="Sign Up"/>
+            </div>
+            <input className={styles.button} onClick={handleClick} type="submit" value="Sign Up"/>
         </form>
     </div>)
 }

@@ -1,58 +1,28 @@
-.div{
-    width: 255px;
-    height: 340px;
+.layout {
     display: flex;
     flex-direction: column;
-    border-width: 1px;
-    border-color: var(--c-dark-fade-color);
-    border-style: solid;
-    position: relative;
-}
-.text{
-    font-size: 14px !important;
-}
-.vector{
-   width: 100%;
-   padding-bottom: 2px;
+    align-items: center;
 }
 
-.profile{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 5px;
-}
-.name{
+.div{
+    margin-top: 100px;
+    width:350px;
+    height: 400px;
     display: flex;
     flex-direction: column;
-    padding-left: 5px;
-}
-.bottom{
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    bottom:0;
-    gap: calc(8vmin + 6px);
+    border: 5px solid var(--c-theme);
+    position: relative;
     align-items: center;
+    border-radius: 20px;
 }
-.emoji{
-    display: flex;
-    flex-direction: row;
-    left: 0;
-    margin-left: 2px;
-    gap: calc(1vmin + 1px);
-}
+
+
 .hr{
     color: var(--c-dark-fade-color);
     background-color: var(--c-dark-fade-color);
     height: 1px;
     margin-top: 70px;
 }
-.rating{
-    position: absolute;
-    bottom: 40px;
-}
-
 
 .price{
     display: flex;
@@ -61,4 +31,13 @@
 }
 .header{
     font-size: 20px !important;
+}
+.button{
+    padding: 10px 20px;
+    outline: none;
+    cursor:pointer;
+    background-color: var(--c-theme);
+    color: var(--c-primary);
+    border-radius: 4px;
+    border: 1px solid var(--c-primary);
 }
