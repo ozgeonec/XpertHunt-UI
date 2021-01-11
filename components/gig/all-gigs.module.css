@@ -1,3 +1,27 @@
 .general {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-auto-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+    grid-column-gap: 20px;
+}
+.div{
+    margin-top: 100px;
+    width:300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid var(--c-theme);
+    align-items: center;
+    border-radius: 20px;
+    row-gap: 20px;
+}
+.header{
 
+}
+.price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

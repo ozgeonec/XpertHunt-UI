@@ -25,7 +25,7 @@ function Gig({className,...props}){
             },
         }).then(function (res){
             setAd(ad)
-            console.log(ad)
+            window.location = "/myAds"
         }).catch(function (error) {
             console.log(error);
         })
@@ -33,18 +33,21 @@ function Gig({className,...props}){
 
     return <div className={styles.layout} {...props}>
         <NavbarBasic/>
-
+        <Header className={styles.header}>Create Your Ad:</Header>
         <form className={styles.div}>
-            <Header>Create Your Ad:</Header>
+
             <TextMain>Your Job Title:</TextMain>
-            <input type="text"  id="title" name="ad[title]" value={ad.description} onChange={e => {
+            <input className={styles.input} type="text"  id="title" name="ad[title]" value={ad.description} onChange={e => {
                 setAd({...ad, title: e.target.value})}}/>
             <TextMain>Describe Your Talents:</TextMain>
-            <input type="text" id="about" name="ad[about]" value={ad.about} onChange={e => {
+            <input className={styles.input2} type="text" id="about" name="ad[about]" value={ad.about} onChange={e => {
                 setAd({...ad, about:event.target.value})}} placeholder="I can..."/>
-            <TextMain>STARTING AT:</TextMain>
-            <input type="number" id="price" name="ad[price]" value={ad.price} onChange={e => {
-                setAd({...ad, price:Number(event.target.value)})}} placeholder="$"/>
+                <div className={styles.budget}>
+                    <TextMain>STARTING AT:</TextMain>
+                    <input className={styles.input3} type="number" id="price" name="ad[price]" value={ad.price} onChange={e => {
+                        setAd({...ad, price:Number(event.target.value)})}} placeholder="$"/>
+                </div>
+
             <input  className={styles.button} type="submit" onClick={handleClick} value="Publish"/>
         </form>
 

@@ -25,7 +25,7 @@ function Order({className, ...props}) {
             },
         }).then(function (res) {
             setOrder(order)
-            console.log(order)
+            window.location = "/myOrders"
         }).catch(function (error) {
             console.log(error);
         })
