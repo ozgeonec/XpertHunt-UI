@@ -3,6 +3,8 @@ import styles from './published-order.module.css'
 import Text from "../text-main/text";
 import Button from "../button/button";
 import axios from "axios";
+import TextMain from "../text-main/text-main";
+import NavbarBasic from "../navbar/navbar-basic";
 
 
 
@@ -31,13 +33,16 @@ function PublishedOrder({children, ...props}){
 
     },[])
 
-    return <div className={styles.div} {...props}>
-            <Text dark>{orders.buyer.username}</Text>
-            <Text dark>{orders.description}</Text>
-            <Text dark>{orders.budget}</Text>
+    return <div className={styles.layout}>
+        <NavbarBasic/>
+        <div className={styles.div} {...props}>
+            <TextMain>{orders.buyer.username}</TextMain>
+            <TextMain>{orders.description}</TextMain>
+            <TextMain>${orders.budget}</TextMain>
             <Button>Delete</Button>
-            <Button>Apply</Button>
         </div>
+    </div>
+
 }
 
 export default PublishedOrder

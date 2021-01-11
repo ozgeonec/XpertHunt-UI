@@ -45,7 +45,7 @@ function ProfilePersonal({...props}) {
     const router = useRouter();
     return (
         <div className={styles.profile}{...props}>
-        <NavbarBasic username={curUser.userName}/>
+        <NavbarBasic/>
         <div className={styles.main}>
             <div className={styles.name}>
                 <ProfileBox button={"Update Profile"}/>

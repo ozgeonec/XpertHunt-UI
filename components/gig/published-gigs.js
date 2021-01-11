@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import styles from './gig.module.css'
+import styles from './published-gigs.module.css'
 import Avatar from "../avatar/avatar";
 import Text from "../text-main/text";
 import Header from "../header/header";
 import axios from "axios";
+import NavbarBasic from "../navbar/navbar-basic";
+import TextMain from "../text-main/text-main";
 
 //category
 function PublishedGigs({className,...props}){
@@ -34,27 +36,27 @@ function PublishedGigs({className,...props}){
 
     },[])
 
-    return( <div className={styles.div}{...props}>
-        <Avatar/>
-            {ads.map((ads)=>{
-                return( <div>
-                    <div className={styles.name}>
-                        <Text bold dark className={styles.text} key={ads.owner.username}>{ads.owner.username}</Text>
-                        <Text pale className={styles.text} key={ads.title}>{ads.title}</Text>
-                    </div>
-                    <Text pale className={styles.text} key={ads.about}>{ads.about}</Text>
-                    <hr className={styles.hr}/>
-                    <div className={styles.bottom}>
+    return <div className={styles.general}{...props}>
+        <NavbarBasic/>
+        {ads.map((ads) => {
+            return (
+                <div className={styles.div}>
+                    <Avatar/>
+                    <TextMain key={ads.owner.username}>{ads.owner.username}</TextMain>
+                    <Text pale key={ads.title}>{ads.title}</Text>
+
+                    <Text pale key={ads.about}>{ads.about}</Text>
+                    <div>
                         <div className={styles.price}>
-                            <Text pale className={styles.text}>STARTING AT </Text>
+                            <Text pale>STARTING AT </Text>
                             <Header className={styles.header} key={ads.price}>${ads.price}</Header>
                         </div>
                     </div>
                 </div>)
-            })}
+        })}
 
 
-    </div>)
+    </div>
 }
 
 export default PublishedGigs

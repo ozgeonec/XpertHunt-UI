@@ -16,12 +16,14 @@
     align-items: center;
     border-radius: 20px;
     row-gap: 20px;
+    justify-content: center;
 }
 .header{
-
+    color: var(--c-theme);
 }
 .price {
     display: flex;
     flex-direction: row;
     align-items: center;
+    column-gap: 5px;
 }
