@@ -10,6 +10,8 @@ import TextMain from "../text-main/text-main";
 function AllOrders({children, ...props}) {
     const [orders, setOrders] = useState([]);
     const [oneOrder, setOneOrder] = useState([])
+    const [name,setName]= useState()
+
     useEffect(() => {
         axios.get("http://localhost:9000/allOrders", {
             withCredentials: true,
@@ -18,8 +20,9 @@ function AllOrders({children, ...props}) {
             },
         }).then((res) => {
             let newOrder = res.data
-
+            console.log(newOrder)
             setOrders(newOrder)
+            console.log(orders)
 
         }).catch(function (error) {
             console.log(error);
@@ -43,7 +46,20 @@ function AllOrders({children, ...props}) {
             console.log(error);
         })
     }
-
+   /* const handleName = () => {
+        axios.post("http://localhost:9000/:username", JSON.stringify(name), {
+            withCredentials: true,
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
+            },
+        }).then(() => {
+            setName(name)
+            window.location = "/profile"
+        }).catch(function (error) {
+            console.log(error); onClick ={()=>handleName}
+        })
+    }*/
     return <div className={styles.layout}>
         <NavbarBasic/>
         <div className={styles.container}>

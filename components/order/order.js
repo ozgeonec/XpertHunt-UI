@@ -10,7 +10,6 @@ import NavbarBasic from "../navbar/navbar-basic";
 
 function Order({className, ...props}) {
 
-
     const [order, setOrder] = useState({
         "description": "",
         "budget": 0

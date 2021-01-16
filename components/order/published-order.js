@@ -11,7 +11,7 @@ import NavbarBasic from "../navbar/navbar-basic";
 function PublishedOrder({children, ...props}){
 
     const [orders, setOrders] = useState({
-        "buyer":"",
+        "buyer":{},
         "description":"",
         "budget":0
     });
@@ -25,7 +25,6 @@ function PublishedOrder({children, ...props}){
             let newOrder = res.data
             console.log(res.data)
             setOrders(newOrder)
-            console.log(newOrder.buyer.username)
         })
         .catch(function (error) {
                 console.log(error);

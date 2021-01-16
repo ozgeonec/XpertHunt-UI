@@ -7,17 +7,15 @@ import axios from "axios";
 import TextMain from "../text-main/text-main";
 import NavbarBasic from "../navbar/navbar-basic";
 
-//category
-function AllGigs({className, ...props}) {
-    const [ads, setAds] = useState([{
-        "owner": [{
-            "email": "",
-            "username": ""
-        }],
-        "title": "",
-        "about": "",
-        "price": 0
-    }])
+//category{
+//         "owner": {
+//         },
+//         "title": "",
+//         "about": "",
+//         "price": 0
+//     }
+function AllGigs({className,children, ...props}) {
+    const [adverts, setAdverts] = useState([])
     useEffect(() => {
         axios.get("http://localhost:9000/allAds", {
             withCredentials: true,
@@ -28,17 +26,17 @@ function AllGigs({className, ...props}) {
             console.log(res.data)
             let newAds = res.data
 
-            setAds(newAds)
-            console.log(ads)
+            setAdverts(newAds)
+            console.log(adverts)
         }).catch(function (error) {
             console.log(error);
         });
 
     }, [])
 
-    return <div className={styles.general}{...props}>
+    return <div className={styles.general}>
         <NavbarBasic/>
-        {ads.map((ads) => {
+        {adverts.map((ads) => {
             return (
                 <div className={styles.div}>
                     <Avatar/>

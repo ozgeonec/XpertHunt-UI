@@ -23,9 +23,10 @@
     flex-direction: column;
     align-items: center;
     width: 400px;
-    height: auto;
+    height: 360px;
     border: 5px solid var(--c-theme);
     border-radius: 20px;
+    padding: 10px;
 }
 .text {
     font-size: 14px;
