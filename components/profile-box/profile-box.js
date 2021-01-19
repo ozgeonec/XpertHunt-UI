@@ -14,8 +14,6 @@ function ProfileBox({name,job,button,...props}) {
          <Text bold dark >{name}</Text>
          <Text pale >{job}</Text>
      </div>
-     <hr/>
-     <Button>{button}</Button>
     </div>)
 }
 

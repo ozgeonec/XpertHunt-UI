@@ -41,8 +41,8 @@ function AllGigs({className,children, ...props}) {
                 <div className={styles.div}>
                     <Avatar/>
                     <TextMain key={ads.owner.username}>{ads.owner.username}</TextMain>
+                    <TextMain key={ads.owner.email}>Contact: {ads.owner.email}</TextMain>
                     <Text pale key={ads.title}>{ads.title}</Text>
-
                 <Text pale key={ads.about}>{ads.about}</Text>
                 <div>
                     <div className={styles.price}>
@@ -52,8 +52,6 @@ function AllGigs({className,children, ...props}) {
                 </div>
             </div>)
         })}
-
-
     </div>
 }
 

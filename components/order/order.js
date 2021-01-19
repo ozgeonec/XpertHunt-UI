@@ -36,7 +36,7 @@ function Order({className, ...props}) {
             <Header>What Service Are You Looking For?</Header>
             <div>
             <TextMain>Describe the service you're looking to purchase - please be as detailed as possible:</TextMain>
-            <input className={styles.input} type="text" id="description" name="order[description]"
+            <input className={styles.input} type="textarea" id="description" name="order[description]" style={{whiteSpace:"nowrap"}}
                    value={order.description} onChange={e => {
                 setOrder({...order, description: e.target.value})
             }} placeholder="I'm looking for..."/>

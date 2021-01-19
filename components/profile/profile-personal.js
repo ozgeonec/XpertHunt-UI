@@ -48,8 +48,7 @@ function ProfilePersonal({...props}) {
         <NavbarBasic/>
         <div className={styles.main}>
             <div className={styles.name}>
-                <ProfileBox button={"Update Profile"}/>
-                <Text dark>{curUser.userName}</Text>
+                <ProfileBox name={curUser.userName}/>
                 <Button onClick={(e) => {
                     router.push('/');
                     handleClick(e);

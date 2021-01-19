@@ -1,6 +1,6 @@
 {
   "name": "xperthunt",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "description": "freelance web app",
   "main": "index.js",
   "private": true,

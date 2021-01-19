@@ -10,7 +10,7 @@ import TextMain from "../text-main/text-main";
 function AllOrders({children, ...props}) {
     const [orders, setOrders] = useState([]);
     const [oneOrder, setOneOrder] = useState([])
-    const [name,setName]= useState()
+
 
     useEffect(() => {
         axios.get("http://localhost:9000/allOrders", {
@@ -46,20 +46,7 @@ function AllOrders({children, ...props}) {
             console.log(error);
         })
     }
-   /* const handleName = () => {
-        axios.post("http://localhost:9000/:username", JSON.stringify(name), {
-            withCredentials: true,
-            headers: {
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*"
-            },
-        }).then(() => {
-            setName(name)
-            window.location = "/profile"
-        }).catch(function (error) {
-            console.log(error); onClick ={()=>handleName}
-        })
-    }*/
+
     return <div className={styles.layout}>
         <NavbarBasic/>
         <div className={styles.container}>
@@ -69,6 +56,7 @@ function AllOrders({children, ...props}) {
                         <TextMain key={orders.description}>{orders.description}</TextMain>
                         <Text dark key={orders.budget}>${orders.budget}</Text>
                         <TextMain key={orders.buyer.username}>{orders.buyer.username}</TextMain>
+                        <TextMain key={orders.buyer.email}>Contact: {orders.buyer.email}</TextMain>
                         <TextMain key={orders.applied}>Applied: {orders.applied}</TextMain>
                         <Button onClick={() => {
                             handleClick(orders._id);
