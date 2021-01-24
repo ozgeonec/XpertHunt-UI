@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styles from "./signup.module.css"
 import cn from 'classnames'
 import axios from 'axios'
+import FlashMessage from 'react-flash-message'
 
 
 function Signup({email,username,password,className, ...props}) {
@@ -10,6 +11,7 @@ function Signup({email,username,password,className, ...props}) {
         "username":"",
         "password":""
     })
+    const [message, setMessage] = useState(false)
 
     const handleClick =  (e) => {
         e.preventDefault();
@@ -24,12 +26,32 @@ function Signup({email,username,password,className, ...props}) {
             console.log(user);
             console.log(res)
             window.location = "/personal-profile"
-        }).catch(function (error) {
-            console.log(error);
-        })
+        }).catch(error => {
+            setMessage(true)
+                if (error.response) {
+                    // The request was made and the server responded with a status code
+                    // that falls out of the range of 2xx
+                    console.log(error.response.data);
+
+                } else if (error.request) {
+                    // The request was made but no response was received
+                    // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                    // http.ClientRequest in node.js
+                    console.log(error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log('Error', error.message);
+                }
+            }
+        );
+
     }
     return (<div className={cn( className)}{...props}>
+
         <form className={styles.login}>
+            {message && <FlashMessage duration={5000} persistOnHover={true}>
+                <p className={styles.parag}>Please Enter a valid E-mail&Username</p>
+            </FlashMessage>}
             <div className={styles.div}>
             <label  className={styles.label} htmlFor="email">Email:</label>
             <input  className={styles.input} type="email" id="email" name="user[email]" value={user.email} onChange={e => {

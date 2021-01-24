@@ -7,6 +7,13 @@ import axios from "axios";
 import TextMain from "../text-main/text-main";
 import NavbarBasic from "../navbar/navbar-basic";
 
+/*.containerarea {
+    min-width: 270px;
+    width: 270px;
+    height: 22px;
+    line-height: 24px;
+    min-height: 22px;
+    overflow-y: hidden; /* fixes scrollbar flash - kudos to @brettjonesdev */
 
 function Order({className, ...props}) {
 
@@ -36,10 +43,13 @@ function Order({className, ...props}) {
             <Header>What Service Are You Looking For?</Header>
             <div>
             <TextMain>Describe the service you're looking to purchase - please be as detailed as possible:</TextMain>
-            <input className={styles.input} type="textarea" id="description" name="order[description]" style={{whiteSpace:"nowrap"}}
-                   value={order.description} onChange={e => {
-                setOrder({...order, description: e.target.value})
-            }} placeholder="I'm looking for..."/>
+                <div >
+                     <textarea rows="10" cols="70" id="description" name="order[description]"
+                               value={order.description} onChange={e => {
+                         setOrder({...order, description: e.target.value})
+                     }} placeholder="I'm looking for...">{}</textarea>
+                </div>
+
             </div>
             <div className={styles.div}>
                 <TextMain>What is your budget for this service? $</TextMain>

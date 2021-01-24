@@ -1,20 +1,19 @@
-import React, {useEffect, useState} from 'react'
-import styles from './all-orders.module.css'
-import Text from "../text-main/text";
-import Button from "../button/button";
+
 import axios from "axios";
 import NavbarBasic from "../navbar/navbar-basic";
 import TextMain from "../text-main/text-main";
+import {useEffect, useState} from "react";
+import styles from "./applied-orders.module.css"
+import Text from "../text-main/text";
 
 
-function AllOrders({children, ...props}) {
+function AppliedOrders({children, ...props}) {
 
     const [orders, setOrders] = useState([]);
-    const [oneOrder, setOneOrder] = useState([])
 
 
     useEffect(() => {
-        axios.get("http://localhost:9000/allOrders", {
+        axios.get("http://localhost:9000/all-applied", {
             withCredentials: true,
             headers: {
                 "Content-Type": "application/json"
@@ -31,24 +30,8 @@ function AllOrders({children, ...props}) {
 
     }, [])
 
-    const handleClick = (id) => {
-        axios.post("http://localhost:9000/apply", JSON.stringify(oneOrder), {
-            withCredentials: true,
-            headers: {
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*"
-            },
-        }).then(() => {
-            let newOrd = orders.find((o) => o._id === id)
-            setOneOrder(newOrd)
-            console.log(oneOrder)
 
-        }).catch(function (error) {
-            console.log(error);
-        })
-    }
-
-    return <div className={styles.layout}>
+    return <div className={styles.sayfa}>
         <NavbarBasic/>
         <div className={styles.container}>
             {orders.map((orders) => {
@@ -59,13 +42,12 @@ function AllOrders({children, ...props}) {
                         <TextMain key={orders.buyer.username}>{orders.buyer.username}</TextMain>
                         <TextMain key={orders.buyer.email}>Contact: {orders.buyer.email}</TextMain>
                         <TextMain key={orders.applied}>Applied: {orders.applied}</TextMain>
-                        <Button onClick={() => {
-                            handleClick(orders._id);
-                        }}>Apply</Button>
+
                     </div>)})}
         </div>
 
     </div>
 }
 
-export default AllOrders
+
+export default AppliedOrders

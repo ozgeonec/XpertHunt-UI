@@ -7,15 +7,11 @@ import axios from "axios";
 import TextMain from "../text-main/text-main";
 import NavbarBasic from "../navbar/navbar-basic";
 
-//category{
-//         "owner": {
-//         },
-//         "title": "",
-//         "about": "",
-//         "price": 0
-//     }
+
 function AllGigs({className,children, ...props}) {
+
     const [adverts, setAdverts] = useState([])
+
     useEffect(() => {
         axios.get("http://localhost:9000/allAds", {
             withCredentials: true,
